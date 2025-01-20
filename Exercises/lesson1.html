@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1</title>
+</head>
+
+<body>
+    <div class="container">
+
+    </div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+
+    <script></script>
+    <script type="text/babel">
+        const container = document.querySelector('.container');
+        // 1a
+        const button = <button>Good job!</button>;
+
+        // 1b
+        const paragraph = <p>My name is Chia Min Jeng</p>
+
+        // 1c
+        // const productComponent =
+        //     <div>
+        //         <p>Cotton socks</p>
+        //         <p>Price: $10</p>
+        //         <button>Add to Cart</button>
+        //     </div>
+
+        // 1d
+        const productCost = 10 + 2 * 8;
+        console.log(productCost);
+
+        // 1e and 1f
+        const shippingCost = 5;
+        const totalCost = productCost + shippingCost;
+        const productComponent =
+            <div>
+                <p>Product cost: ${productCost}</p>
+                <p>Shipping cost: ${shippingCost}</p>
+                <p>Total cost: ${totalCost}</p>
+                <button>Place your order</button>
+            </div>
+
+        // 1g
+        const day = dayjs().format('MMMM D');
+
+        // 1h
+        const dayParagraph = <p>Today is {day}</p>
+
+        // 1i
+        // const time = dayjs().format('HH:mm:ss');
+        // const timeParagraph = <p>Current time: {time}</p>
+
+        // 1j
+        const root = ReactDOM.createRoot(container);
+
+        setInterval(() => {
+            const time = dayjs().format('HH:mm:ss');
+            const timeParagraph = <p>Current time: {time}</p>
+            root.render(timeParagraph);
+        }, 1000);
+    </script>
+
+
+</body>
+
+</html>

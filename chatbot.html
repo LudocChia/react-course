@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+
+
+    <script type="text/babel">
+        const ChatInputComponent = () => {
+            return (
+                <>
+                    <input
+                        placeholder="Send a message to Chatbot"
+                    />
+                    <button>Send</button>
+                </>
+            );
+        }
+
+        const ChatMessageComponent = ({ message, sender }) => {
+            // const message = props.message;
+            // const sender = props.sender;
+            // const { message, sender } = props;
+            return (
+                <div>
+                    {sender === 'robot' && <img src='./images/robot.png' alt="" width="50px" />}
+                    {message}
+                    {sender === 'user' && <img src='./images/user.png' alt="" width="50px" />}
+                </div>
+            );
+        }
+
+        const App = () => {
+            return (
+                <>
+                    <ChatInputComponent />
+                    <ChatMessageComponent
+                        message="hello chatbot"
+                        sender="user"
+                    />
+                    <ChatMessageComponent
+                        message="Hello! How can I help you?"
+                        sender="robot"
+                    />
+                </>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />)
+    </script>
+</body>
+
+</html>
