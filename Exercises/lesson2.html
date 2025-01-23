@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
+    <script type="text/babel">
+        const LoginForm = () => {
+            return (
+                <>
+                    <div>
+                        <input
+                            type="text"
+                            placeholder="Email"
+                        />
+                    </div>
+                    <div>
+                        <input
+                            type="text"
+                            placeholder="Password"
+                        />
+                    </div>
+                    <button>Login</button>
+                    <button>Sign Up</button>
+                </>
+            )
+        }
+
+        const App = () => {
+            return (
+                <>
+                    <p>Hello, welcome to my website</p>
+                    <LoginForm />
+                </>
+            )
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />)
+    </script>
+</body>
+
+</html>

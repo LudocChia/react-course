@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2 (Challenge Exercises)</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
+    <script type="text/babel">
+        const ProductDetailsComponent = ({ productName, productPrice, discountPrice, imageSrc }) => {
+            return (
+                <div>
+                    <img src={imageSrc} width="100px" />
+                    <p>{productName}</p>
+                    {discountPrice ? <del>Price: ${productPrice}</del> : <p>Price: ${productPrice}</p>}
+                    {discountPrice && <p>Discount price: ${discountPrice}</p>}
+                    <button>Add to Cart</button>
+                </div>
+            )
+        }
+
+        const App = () => {
+            return (
+                <>
+                    <ProductDetailsComponent
+                        productName='Cotton socks'
+                        productPrice='10.90'
+                        discountPrice='5.45'
+                        imageSrc='../images/cotton-socks.png'
+                    />
+                    <ProductDetailsComponent
+                        productName='Tennis balls'
+                        productPrice='6.00'
+                        imageSrc='../images/tennis-balls.png'
+                    />
+                    <ProductDetailsComponent
+                        productName='Plain T-Shirt'
+                        productPrice='7.99'
+                        imageSrc='../images/plain-t-shirt.png'
+                    />
+                </>
+            )
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />)
+    </script>
+</body>
+
+</html>
