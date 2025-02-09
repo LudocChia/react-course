@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3 Exercise</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
+
+    <script type="text/babel">
+
+        const APP = () => {
+            const [name, setName] = React.useState('');
+
+            function saveName(even) {
+                setName(
+                    event.target.value
+                )
+            }
+
+            function resetName() {
+                setName('')
+            }
+
+            function exampleName() {
+                setName('Min Jeng')
+            }
+            return (
+                <>
+                    <input
+                        onChange={saveName}
+                        placeholder="Type a name here"
+                        type="text"
+                        value={name}
+                    />
+                    <button onClick={resetName}>Reset</button>
+                    <button onClick={exampleName}>Example</button>
+                    <p>Hello {name}</p>
+                </>
+            )
+
+        }
+
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<APP />)
+    </script>
+</body>
+
+</html>

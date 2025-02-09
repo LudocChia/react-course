@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4</title>
+    <style>
+        button {
+            border: none;
+            border-radius: 5px;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .button--on {
+            background-color: rgb(25, 135, 84);
+        }
+
+        .button--off {
+            background-color: rgb(220, 53, 69);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
+
+    <script type="text/babel">
+        const Button = () => {
+            const [isButtonOn, setIsButtonOn] = React.useState(false);
+
+            const toggleButton = () => {
+                if (isButtonOn) {
+                    setIsButtonOn(false);
+                } else {
+                    setIsButtonOn(true);
+                }
+            }
+
+            return (
+                <button onClick={toggleButton}
+                    className={isButtonOn == false ? 'button--off' : 'button--on'
+                    }>
+
+                    {isButtonOn === false ? 'OFF' : 'On'}
+                </button>
+            )
+        }
+        const App = () => {
+            return (
+                <Button />
+            )
+
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+
+    </script>
+</body>
+
+</html>
