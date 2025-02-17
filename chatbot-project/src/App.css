@@ -1,0 +1,9 @@
+/* Block */
+.chatbot {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: auto;
+  flex-grow: 1;
+  height: 100vh;
+}

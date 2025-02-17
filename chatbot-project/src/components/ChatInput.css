@@ -1,0 +1,14 @@
+.chatbot__input-container {
+    display: flex;
+    flex-grow: 1;
+    align-items: end;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.chatbot__input {
+    flex-grow: 1;
+    border-radius: 10px;
+    padding: 12px 20px;
+    border: 1px solid black;
+}
